@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Hospital - Best Healthcare Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <span><i class="fas fa-ambulance"></i> Emergency: </span>
+                <span class="emergency-number">1-800-MEDICARE</span>
+            </div>
+            <div class="emergency-contact">
+                <span><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</span>
+                <span><i class="fas fa-envelope"></i> emergency@medicare.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediCare</span>
+                    </a>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="appointment.html">Appointment</a></li>
+                        <li><a href="patient-portal.html">Patient Portal</a></li>
+                        <li><a href="admin-dashboard.html">Admin</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="appointment.html" class="btn btn-primary">Book Appointment</a>
+                </div>
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background: linear-gradient(rgba(0,123,255,0.8), rgba(0,86,179,0.8)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920') center/cover;">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Your Health Is Our Priority</h1>
+                        <p>Providing world-class healthcare services with compassion and excellence. Our team of expert medical professionals is dedicated to your well-being.</p>
+                        <div class="hero-buttons">
+                            <a href="appointment.html" class="btn btn-primary">Get Appointment</a>
+                            <a href="services.html" class="btn btn-outline">Our Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background: linear-gradient(rgba(40,167,69,0.8), rgba(25,110,40,0.8)), url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1920') center/cover;">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Advanced Medical Care</h1>
+                        <p>State-of-the-art facilities and cutting-edge technology to ensure the best possible treatment for you and your family.</p>
+                        <div class="hero-buttons">
+                            <a href="doctors.html" class="btn btn-primary">Meet Our Doctors</a>
+                            <a href="services.html" class="btn btn-outline">View Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background: linear-gradient(rgba(255,193,7,0.8), rgba(255,160,0,0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920') center/cover;">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>24/7 Emergency Services</h1>
+                        <p>Round-the-clock emergency care when you need it most. Our emergency team is always ready to help.</p>
+                        <div class="hero-buttons">
+                            <a href="tel:1-800-MEDICARE" class="btn btn-primary">Call Emergency</a>
+                            <a href="patient-portal.html" class="btn btn-outline">Patient Portal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-nav">
+            <button class="hero-dot active" data-slide="0"></button>
+            <button class="hero-dot" data-slide="1"></button>
+            <button class="hero-dot" data-slide="2"></button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Expert Doctors</h3>
+                    <p>Our team of 200+ specialists provides comprehensive care across all medical fields.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Modern Facilities</h3>
+                    <p>State-of-the-art equipment and comfortable patient rooms for optimal care.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>24/7 Services</h3>
+                    <p>Round-the-clock emergency care and support whenever you need it.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Patient Care</h3>
+                    <p>Personalized treatment plans and compassionate care for every patient.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Our Services</span>
+                <h2>Comprehensive Healthcare Services</h2>
+                <p>We offer a wide range of medical services to cater to all your healthcare needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Cardiology</h3>
+                    <p>Comprehensive heart care including diagnostics, treatment, and surgery.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neurology</h3>
+                    <p>Expert care for brain and nervous system disorders.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Orthopedics</h3>
+                    <p>Bone, joint, and muscle care with advanced treatment options.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Pediatrics</h3>
+                    <p>Specialized healthcare for infants, children, and adolescents.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                    <h3>General Medicine</h3>
+                    <p>Primary care services for all ages and health conditions.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Ophthalmology</h3>
+                    <p>Complete eye care from routine exams to complex surgeries.</p>
+                    <a href="services.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="200">0</div>
+                    <div class="stat-label">Expert Doctors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50000">0</div>
+                    <div class="stat-label">Happy Patients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Medical Departments</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors" id="doctors">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Our Team</span>
+                <h2>Meet Our Expert Doctors</h2>
+                <p>Our dedicated team of medical professionals is here to provide you with the best care</p>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400" alt="Dr. Sarah Johnson">
+                        <div class="doctor-overlay">
+                            <a href="appointment.html" class="btn btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <span class="specialty">Cardiologist</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <p>15+ years experience in cardiac care and surgery</p>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400" alt="Dr. Michael Chen">
+                        <div class="doctor-overlay">
+                            <a href="appointment.html" class="btn btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Michael Chen</h3>
+                        <span class="specialty">Neurologist</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <p>Expert in brain disorders and neurological treatments</p>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400" alt="Dr. Emily Williams">
+                        <div class="doctor-overlay">
+                            <a href="appointment.html" class="btn btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Emily Williams</h3>
+                        <span class="specialty">Pediatrician</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <p>Specialized in child healthcare and development</p>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400" alt="Dr. James Anderson">
+                        <div class="doctor-overlay">
+                            <a href="appointment.html" class="btn btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. James Anderson</h3>
+                        <span class="specialty">Orthopedic Surgeon</span>
+                        <div class="doctor-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <p>Expert in sports injuries and joint replacements</p>
+                    </div>
+                </div>
+            </div>
+            <div class="doctors-cta">
+                <a href="doctors.html" class="btn btn-primary">View All Doctors</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Testimonials</span>
+                <h2>What Our Patients Say</h2>
+                <p>Real experiences from our valued patients</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The care I received at MediCare was exceptional. The doctors and nurses were attentive, professional, and truly cared about my recovery. I highly recommend this hospital to everyone."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Robert Martinez">
+                        <div class="author-info">
+                            <h4>Robert Martinez</h4>
+                            <span>Cardiac Patient</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"My daughter was treated with such compassion by the pediatric team. They made her feel comfortable and at ease throughout her entire visit. Thank you MediCare!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Jennifer Thompson">
+                        <div class="author-info">
+                            <h4>Jennifer Thompson</h4>
+                            <span>Parent</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The emergency team acted quickly and professionally when I brought my father in. Their expertise saved his life. We're forever grateful to MediCare Hospital."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="David Wilson">
+                        <div class="author-info">
+                            <h4>David Wilson</h4>
+                            <span>Patient's Son</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Medical Assistance?</h2>
+                <p>Schedule an appointment with one of our expert doctors today and take the first step towards better health.</p>
+                <div class="cta-buttons">
+                    <a href="appointment.html" class="btn btn-primary btn-lg">Book Appointment</a>
+                    <a href="tel:+15551234567" class="btn btn-outline btn-lg">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>MediCare</span>
+                        </a>
+                    </div>
+                    <p>Providing world-class healthcare services with compassion and excellence since 1999.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="appointment.html">Appointment</a></li>
+                        <li><a href="patient-portal.html">Patient Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Cardiology</a></li>
+                        <li><a href="services.html">Neurology</a></li>
+                        <li><a href="services.html">Orthopedics</a></li>
+                        <li><a href="services.html">Pediatrics</a></li>
+                        <li><a href="services.html">Emergency Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Medical Center Drive, Healthcare City, HC 12345</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@medicare.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Emergency Services</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare Hospital. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

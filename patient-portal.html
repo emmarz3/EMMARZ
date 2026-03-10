@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal - MediCare Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <span><i class="fas fa-ambulance"></i> Emergency: </span>
+                <span class="emergency-number">1-800-MEDICARE</span>
+            </div>
+            <div class="emergency-contact">
+                <span><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</span>
+                <span><i class="fas fa-envelope"></i> emergency@medicare.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediCare</span>
+                    </a>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="appointment.html">Appointment</a></li>
+                        <li><a href="patient-portal.html" class="active">Patient Portal</a></li>
+                        <li><a href="admin-dashboard.html">Admin</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="appointment.html" class="btn btn-primary">Book Appointment</a>
+                </div>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Patient Portal</h1>
+            <p>Access your health records and manage appointments</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li><span>/</span></li>
+                <li class="current">Patient Portal</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Patient Portal Section -->
+    <section class="portal-section">
+        <div class="container">
+            <!-- Login/Register Container -->
+            <div class="portal-container" id="authContainer">
+                <div class="portal-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="register">Register</button>
+                </div>
+
+                <!-- Login Form -->
+                <div class="tab-content active" id="loginTab">
+                    <form id="loginForm" class="portal-form">
+                        <div class="form-group">
+                            <label class="form-label" for="loginEmail">Email Address</label>
+                            <input type="email" id="loginEmail" class="form-control" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" class="form-control" required placeholder="Enter your password">
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkbox-custom"></span>
+                                Remember me
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                        <div class="form-footer">
+                            <a href="#" id="forgotPassword">Forgot Password?</a>
+                        </div>
+                    </form>
+                    <div class="demo-login">
+                        <p><strong>Demo Credentials:</strong></p>
+                        <p>Email: patient@medicare.com</p>
+                        <p>Password: demo123</p>
+                    </div>
+                </div>
+
+                <!-- Register Form -->
+                <div class="tab-content" id="registerTab">
+                    <form id="registerForm" class="portal-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="regFirstName">First Name</label>
+                                <input type="text" id="regFirstName" class="form-control" required placeholder="First name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="regLastName">Last Name</label>
+                                <input type="text" id="regLastName" class="form-control" required placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="regEmail">Email Address</label>
+                            <input type="email" id="regEmail" class="form-control" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="regPhone">Phone Number</label>
+                            <input type="tel" id="regPhone" class="form-control" required placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="regDob">Date of Birth</label>
+                            <input type="date" id="regDob" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="regPassword">Password</label>
+                            <input type="password" id="regPassword" class="form-control" required placeholder="Create a password">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="regConfirmPassword">Confirm Password</label>
+                            <input type="password" id="regConfirmPassword" class="form-control" required placeholder="Confirm your password">
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span class="checkbox-custom"></span>
+                                I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Create Account</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Dashboard (Hidden by default) -->
+            <div class="dashboard-container" id="dashboardContainer" style="display: none;">
+                <div class="dashboard-header">
+                    <div class="welcome-section">
+                        <h2>Welcome, <span id="patientName">Patient</span>!</h2>
+                        <p>Manage your health information and appointments</p>
+                    </div>
+                    <button class="btn btn-outline" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <a href="appointment.html" class="action-card">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Book Appointment</span>
+                    </a>
+                    <a href="#appointments" class="action-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>View Appointments</span>
+                    </a>
+                    <a href="#records" class="action-card">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Medical Records</span>
+                    </a>
+                    <a href="#prescriptions" class="action-card">
+                        <i class="fas fa-prescription"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </div>
+
+                <!-- Appointments Section -->
+                <div class="dashboard-section" id="appointments">
+                    <div class="section-header">
+                        <h3><i class="fas fa-calendar"></i> My Appointments</h3>
+                        <a href="appointment.html" class="btn btn-sm btn-primary">New Appointment</a>
+                    </div>
+                    <div class="appointments-list" id="appointmentsList">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Medical Records Section -->
+                <div class="dashboard-section" id="records">
+                    <div class="section-header">
+                        <h3><i class="fas fa-file-medical-alt"></i> Medical Records</h3>
+                    </div>
+                    <div class="records-grid">
+                        <div class="record-card">
+                            <div class="record-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="record-info">
+                                <h4>General Checkup</h4>
+                                <p>Date: January 15, 2024</p>
+                                <p>Doctor: Dr. Robert Martinez</p>
+                                <span class="badge badge-success">Completed</span>
+                            </div>
+                        </div>
+                        <div class="record-card">
+                            <div class="record-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="record-info">
+                                <h4>Cardiac Evaluation</h4>
+                                <p>Date: December 10, 2023</p>
+                                <p>Doctor: Dr. Sarah Johnson</p>
+                                <span class="badge badge-success">Completed</span>
+                            </div>
+                        </div>
+                        <div class="record-card">
+                            <div class="record-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="record-info">
+                                <h4>Annual Physical</h4>
+                                <p>Date: November 5, 2023</p>
+                                <p>Doctor: Dr. John Smith</p>
+                                <span class="badge badge-success">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prescriptions Section -->
+                <div class="dashboard-section" id="prescriptions">
+                    <div class="section-header">
+                        <h3><i class="fas fa-prescription-bottle-medical"></i> Prescriptions</h3>
+                    </div>
+                    <div class="prescriptions-list">
+                        <div class="prescription-card">
+                            <div class="prescription-header">
+                                <h4>Lisinopril 10mg</h4>
+                                <span class="badge badge-info">Active</span>
+                            </div>
+                            <p>Dosage: Once daily in the morning</p>
+                            <p>Prescribed by: Dr. Sarah Johnson</p>
+                            <p>Valid until: March 2024</p>
+                            <button class="btn btn-sm btn-outline">Request Refill</button>
+                        </div>
+                        <div class="prescription-card">
+                            <div class="prescription-header">
+                                <h4>Metformin 500mg</h4>
+                                <span class="badge badge-warning">Needs Renewal</span>
+                            </div>
+                            <p>Dosage: Twice daily with meals</p>
+                            <p>Prescribed by: Dr. Robert Martinez</p>
+                            <p>Valid until: February 2024</p>
+                            <button class="btn btn-sm btn-outline">Request Refill</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Section -->
+                <div class="dashboard-section" id="profile">
+                    <div class="section-header">
+                        <h3><i class="fas fa-user-circle"></i> My Profile</h3>
+                    </div>
+                    <div class="profile-card">
+                        <div class="profile-info">
+                            <div class="info-row">
+                                <span class="label">Full Name:</span>
+                                <span class="value" id="profileName">John Doe</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Email:</span>
+                                <span class="value" id="profileEmail">patient@medicare.com</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Phone:</span>
+                                <span class="value" id="profilePhone">+1 (555) 123-4567</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Date of Birth:</span>
+                                <span class="value" id="profileDob">January 1, 1990</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Blood Type:</span>
+                                <span class="value">O Positive</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Allergies:</span>
+                                <span class="value">Penicillin</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="editProfileBtn">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>MediCare</span>
+                        </a>
+                    </div>
+                    <p>Providing world-class healthcare services with compassion and excellence since 1999.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="appointment.html">Appointment</a></li>
+                        <li><a href="patient-portal.html">Patient Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Cardiology</a></li>
+                        <li><a href="services.html">Neurology</a></li>
+                        <li><a href="services.html">Orthopedics</a></li>
+                        <li><a href="services.html">Pediatrics</a></li>
+                        <li><a href="services.html">Emergency Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Medical Center Drive, Healthcare City, HC 12345</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@medicare.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Emergency Services</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare Hospital. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Patient Portal JavaScript with API Integration
+        document.addEventListener('DOMContentLoaded', function() {
+            initPortal();
+        });
+
+        async function initPortal() {
+            // Tab switching
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tab = this.dataset.tab;
+                    
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    document.getElementById(tab + 'Tab').classList.add('active');
+                });
+            });
+
+            // Login form
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('loginEmail').value;
+                    const password = document.getElementById('loginPassword').value;
+
+                    // Try API login first
+                    const result = await MediCare.API.post('/auth/login', { email, password });
+                    
+                    if (result.success) {
+                        loginSuccess(result.data);
+                    } else if (email === 'patient@medicare.com' && password === 'demo123') {
+                        // Demo fallback
+                        loginSuccess({
+                            name: 'John Doe',
+                            email: email,
+                            phone: '+1 (555) 123-4567',
+                            dob: '1990-01-01'
+                        });
+                    } else {
+                        alert('Invalid credentials. Try patient@medicare.com / demo123');
+                    }
+                });
+            }
+
+            // Register form
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const firstName = document.getElementById('regFirstName').value;
+                    const lastName = document.getElementById('regLastName').value;
+                    const email = document.getElementById('regEmail').value;
+                    const phone = document.getElementById('regPhone').value;
+                    const dob = document.getElementById('regDob').value;
+                    const password = document.getElementById('regPassword').value;
+
+                    // Try API registration
+                    const result = await MediCare.API.post('/auth/register', {
+                        firstName, lastName, email, phone, dob, password
+                    });
+                    
+                    if (result.success) {
+                        loginSuccess(result.data);
+                    } else {
+                        alert('Registration failed. Please try again.');
+                    }
+                });
+            }
+
+            // Check if already logged in
+            const isLoggedIn = localStorage.getItem('patientLoggedIn');
+            if (isLoggedIn) {
+                const patientData = JSON.parse(localStorage.getItem('patientData'));
+                showDashboard(patientData);
+            }
+
+            // Logout
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    localStorage.removeItem('patientLoggedIn');
+                    localStorage.removeItem('patientData');
+                    document.getElementById('dashboardContainer').style.display = 'none';
+                    document.getElementById('authContainer').style.display = 'block';
+                });
+            }
+
+            // Load appointments
+            loadAppointments();
+        }
+
+        function loginSuccess(data) {
+            localStorage.setItem('patientLoggedIn', 'true');
+            localStorage.setItem('patientData', JSON.stringify(data));
+            showDashboard(data);
+        }
+
+        async function showDashboard(data) {
+            document.getElementById('authContainer').style.display = 'none';
+            document.getElementById('dashboardContainer').style.display = 'block';
+
+            // Update profile info
+            document.getElementById('patientName').textContent = data.name;
+            document.getElementById('profileName').textContent = data.name;
+            document.getElementById('profileEmail').textContent = data.email;
+            document.getElementById('profilePhone').textContent = data.phone || '+1 (555) 000-0000';
+            if (data.dob) {
+                const dob = new Date(data.dob);
+                document.getElementById('profileDob').textContent = dob.toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                });
+            }
+
+            // Load appointments from API
+            await loadAppointmentsFromAPI(data.id);
+        }
+
+        async function loadAppointmentsFromAPI(patientId) {
+            const appointmentsList = document.getElementById('appointmentsList');
+            
+            // Try API first
+            const result = patientId 
+                ? await MediCare.API.get(`/appointments/patient/${patientId}`)
+                : await MediCare.API.get('/appointments');
+            
+            let appointments = [];
+            if (result.success) {
+                appointments = result.data;
+            } else {
+                // Fallback to local storage
+                appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            }
+
+            if (appointments.length === 0) {
+                appointmentsList.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-calendar-times"></i>
+                        <h4>No Appointments</h4>
+                        <p>You don't have any appointments yet.</p>
+                        <a href="appointment.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                `;
+            } else {
+                appointmentsList.innerHTML = appointments.slice(0, 5).map(apt => {
+                    const date = new Date(apt.date);
+                    const formattedDate = date.toLocaleDateString('en-US', {
+                        weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'
+                    });
+                    
+                    const formattedTime = MediCare.formatTime(apt.time || '09:00');
+                    const statusClass = apt.status === 'confirmed' ? 'success' : apt.status === 'pending' ? 'warning' : 'danger';
+
+                    return `
+                        <div class="appointment-item">
+                            <div class="appointment-date">
+                                <span class="day">${date.getDate()}</span>
+                                <span class="month">${date.toLocaleDateString('en-US', { month: 'short' })}</span>
+                            </div>
+                            <div class="appointment-details">
+                                <h4>${apt.department || 'General Medicine'}</h4>
+                                <p><i class="fas fa-user-md"></i> ${apt.doctorName}</p>
+                                <p><i class="fas fa-clock"></i> ${formattedTime}</p>
+                            </div>
+                            <div class="appointment-status">
+                                <span class="badge badge-${statusClass}">${apt.status}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+
+        function loadAppointments() {
+            // This is called for demo purposes when not logged in
+            const appointmentsList = document.getElementById('appointmentsList');
+            const storedAppointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+
+            if (storedAppointments.length === 0) {
+                appointmentsList.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-calendar-times"></i>
+                        <h4>No Appointments</h4>
+                        <p>You don't have any appointments yet.</p>
+                        <a href="appointment.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                `;
+            } else {
+                loadAppointmentsFromAPI();
+            }
+        }
+    </script>
+</body>
+</html>
+

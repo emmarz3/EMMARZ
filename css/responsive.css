@@ -1,0 +1,368 @@
+/* MediCare Hospital - Responsive Styles */
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 0;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .doctors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-slider {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Emergency Banner */
+    .emergency-banner .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .emergency-contact {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Header */
+    .header-actions {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .nav {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: var(--white);
+        transition: var(--transition);
+        overflow-y: auto;
+    }
+
+    .nav.active {
+        left: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+    }
+
+    .nav-list li {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 15px 0;
+        font-size: 1.1rem;
+    }
+
+    .nav-list a::after {
+        display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    /* Features Section */
+    .features {
+        padding: 50px 0;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+
+    /* Services Section */
+    .services {
+        padding: 60px 0;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    /* Stats Section */
+    .stats {
+        padding: 50px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    /* Doctors Section */
+    .doctors {
+        padding: 60px 0;
+    }
+
+    .doctors-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Testimonials */
+    .testimonials {
+        padding: 60px 0;
+    }
+
+    .testimonials-slider {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+
+    /* CTA Section */
+    .cta {
+        padding: 60px 0;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 50px 0 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Page Header */
+    .page-header {
+        padding: 120px 0 60px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    /* Forms */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Tables */
+    .table-container {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 10px 8px;
+    }
+
+    /* Dashboard */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .btn-lg {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .search-box button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Quick Contact Widget */
+    .quick-contact {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+    }
+
+    .quick-contact-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-nav {
+        bottom: 10px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .footer,
+    .emergency-banner,
+    .hero-nav,
+    .btn {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .page-break {
+        page-break-before: always;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-slide,
+    .page-header {
+        background-attachment: scroll;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - MediCare Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <span><i class="fas fa-ambulance"></i> Emergency: </span>
+                <span class="emergency-number">1-800-MEDICARE</span>
+            </div>
+            <div class="emergency-contact">
+                <span><i class="fas fa-phone-alt"></i> +23412345678</span>
+                <span><i class="fas fa-envelope"></i> emergency@medicare.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediCare</span>
+                    </a>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="appointment.html" class="active">Appointment</a></li>
+                        <li><a href="patient-portal.html">Patient Portal</a></li>
+                        <li><a href="admin-dashboard.html">Admin</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="appointment.html" class="btn btn-primary">Book Appointment</a>
+                </div>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Book an Appointment</h1>
+            <p>Schedule your visit with our expert doctors</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li><span>/</span></li>
+                <li class="current">Appointment</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Appointment Section -->
+    <section class="appointment-section">
+        <div class="container">
+            <div class="appointment-wrapper">
+                <!-- Appointment Form -->
+                <div class="appointment-form-container">
+                    <div class="form-header">
+                        <h2><i class="fas fa-calendar-check"></i> Book Your Appointment</h2>
+                        <p>Fill in the details below to schedule your visit</p>
+                    </div>
+
+                    <form id="appointmentForm" class="appointment-form">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-control" required placeholder="Enter your first name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-control" required placeholder="Enter your last name">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" class="form-control" required placeholder="your.email@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+23412345678">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="dob">Date of Birth *</label>
+                                    <input type="date" id="dob" name="dob" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="gender">Gender *</label>
+                                    <select id="gender" name="gender" class="form-control" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Appointment Details -->
+                        <div class="form-section">
+                            <h3>Appointment Details</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="department">Department *</label>
+                                    <select id="department" name="department" class="form-control" required>
+                                        <option value="">Select Department</option>
+                                        <option value="cardiology">Cardiology</option>
+                                        <option value="neurology">Neurology</option>
+                                        <option value="orthopedics">Orthopedics</option>
+                                        <option value="pediatrics">Pediatrics</option>
+                                        <option value="general-medicine">General Medicine</option>
+                                        <option value="ophthalmology">Ophthalmology</option>
+                                        <option value="pulmonology">Pulmonology</option>
+                                        <option value="gastroenterology">Gastroenterology</option>
+                                        <option value="dermatology">Dermatology</option>
+                                        <option value="gynecology">Gynecology</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="doctor">Doctor *</label>
+                                    <select id="doctor" name="doctor" class="form-control" required disabled>
+                                        <option value="">Select Department First</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="appointmentDate">Preferred Date *</label>
+                                    <input type="date" id="appointmentDate" name="appointmentDate" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="appointmentTime">Preferred Time *</label>
+                                    <select id="appointmentTime" name="appointmentTime" class="form-control" required>
+                                        <option value="">Select Time</option>
+                                        <option value="09:00">09:00 AM</option>
+                                        <option value="09:30">09:30 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="10:30">10:30 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="11:30">11:30 AM</option>
+                                        <option value="14:00">02:00 PM</option>
+                                        <option value="14:30">02:30 PM</option>
+                                        <option value="15:00">03:00 PM</option>
+                                        <option value="15:30">03:30 PM</option>
+                                        <option value="16:00">04:00 PM</option>
+                                        <option value="16:30">04:30 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="reason">Reason for Visit *</label>
+                                <textarea id="reason" name="reason" class="form-control" required placeholder="Please describe your symptoms or reason for the appointment..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Appointment Type *</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="appointmentType" value="new" checked>
+                                        <span class="radio-custom"></span>
+                                        New Patient
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="appointmentType" value="followup">
+                                        <span class="radio-custom"></span>
+                                        Follow-up Visit
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="appointmentType" value="consultation">
+                                        <span class="radio-custom"></span>
+                                        Consultation
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Submit -->
+                        <div class="form-section">
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span class="checkbox-custom"></span>
+                                    I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkbox-custom"></span>
+                                    I would like to receive updates and news from MediCare
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                <i class="fas fa-calendar-check"></i> Book Appointment
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Appointment Info Sidebar -->
+                <div class="appointment-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-clock"></i> Working Hours</h3>
+                        <ul>
+                            <li><span>Monday - Friday</span><span>8:00 AM - 8:00 PM</span></li>
+                            <li><span>Saturday</span><span>9:00 AM - 5:00 PM</span></li>
+                            <li><span>Sunday</span><span>10:00 AM - 2:00 PM</span></li>
+                            <li><span>Emergency</span><span>24/7 Available</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle"></i> What to Bring</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Valid ID / Passport</li>
+                            <li><i class="fas fa-check"></i> Previous medical records</li>
+                            <li><i class="fas fa-check"></i> List of current medications</li>
+                            <li><i class="fas fa-check"></i> Insurance card (if applicable)</li>
+                            <li><i class="fas fa-check"></i> Referral letter (if any)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card contact-card">
+                        <h3><i class="fas fa-headset"></i> Need Help?</h3>
+                        <p>Our support team is available to assist you</p>
+                        <div class="contact-options">
+                            <a href="tel:+23412345678" class="btn btn-outline">
+                                <i class="fas fa-phone-alt"></i> Call Us
+                            </a>
+                            <a href="mailto:support@medicare.com" class="btn btn-outline">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-card emergency-card">
+                        <h3><i class="fas fa-ambulance"></i> Emergency?</h3>
+                        <p>For medical emergencies, please call our 24/7 emergency line</p>
+                        <a href="tel:1-800-MEDICARE" class="btn btn-danger">
+                            <i class="fas fa-phone-alt"></i> 1-800-MEDICARE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Appointment Booked!</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h4>Thank You!</h4>
+                <p>Your appointment has been successfully booked. We have sent a confirmation email with all the details.</p>
+                <div class="appointment-summary" id="appointmentSummary">
+                    <!-- Dynamic content -->
+                </div>
+                <p class="note">Please arrive 15 minutes before your scheduled appointment time.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="closeModal()">Done</button>
+                <button class="btn btn-outline" onclick="printAppointment()">
+                    <i class="fas fa-print"></i> Print
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>MediCare</span>
+                        </a>
+                    </div>
+                    <p>Providing world-class healthcare services with compassion and excellence since 1999.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="appointment.html">Appointment</a></li>
+                        <li><a href="patient-portal.html">Patient Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Cardiology</a></li>
+                        <li><a href="services.html">Neurology</a></li>
+                        <li><a href="services.html">Orthopedics</a></li>
+                        <li><a href="services.html">Pediatrics</a></li>
+                        <li><a href="services.html">Emergency Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Medical Center Drive, Healthcare City, HC 12345</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@medicare.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Emergency Services</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare Hospital. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/appointment.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MediCare Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <div class="emergency-content">
+                <span><i class="fas fa-ambulance"></i> Emergency: </span>
+                <span class="emergency-number">1-800-MEDICARE</span>
+            </div>
+            <div class="emergency-contact">
+                <span><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</span>
+                <span><i class="fas fa-envelope"></i> emergency@medicare.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>MediCare</span>
+                    </a>
+                </div>
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="doctors.html">Doctors</a></li>
+                        <li><a href="appointment.html">Appointment</a></li>
+                        <li><a href="patient-portal.html">Patient Portal</a></li>
+                        <li><a href="admin-dashboard.html" class="active">Admin</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="index.html" class="btn btn-outline">View Website</a>
+                </div>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Wrapper -->
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <h3><i class="fas fa-user-shield"></i> Admin Panel</h3>
+            </div>
+            <nav class="admin-nav">
+                <a class="admin-nav-item active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a class="admin-nav-item" data-section="appointments">
+                    <i class="fas fa-calendar-check"></i> Appointments
+                    <span class="badge badge-danger" id="pendingAppointments">0</span>
+                </a>
+                <a class="admin-nav-item" data-section="patients">
+                    <i class="fas fa-users"></i> Patients
+                </a>
+                <a class="admin-nav-item" data-section="doctors">
+                    <i class="fas fa-user-md"></i> Doctors
+                </a>
+                <a class="admin-nav-item" data-section="reports">
+                    <i class="fas fa-chart-bar"></i> Reports
+                </a>
+                <a class="admin-nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Section -->
+            <section class="admin-section active" id="dashboard">
+                <div class="admin-header">
+                    <h1>Dashboard Overview</h1>
+                    <div class="admin-header-actions">
+                        <div class="admin-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search...">
+                        </div>
+                        <div class="admin-user">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Admin">
+                            <div class="admin-user-info">
+                                <h4>Admin User</h4>
+                                <span>Administrator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-card-icon blue">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-card-content">
+                            <h3 id="totalPatients">0</h3>
+                            <p>Total Patients</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon green">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-card-content">
+                            <h3 id="todayAppointments">0</h3>
+                            <p>Today's Appointments</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon orange">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="stat-card-content">
+                            <h3>8</h3>
+                            <p>Active Doctors</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon red">
+                            <i class="fas fa-procedures"></i>
+                        </div>
+                        <div class="stat-card-content">
+                            <h3>12</h3>
+                            <p>Admitted Patients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Recent Appointments -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h3>Recent Appointments</h3>
+                            <button class="btn btn-sm btn-primary" onclick="switchSection('appointments')">View All</button>
+                        </div>
+                        <div class="dashboard-card-body">
+                            <div class="appointment-list" id="recentAppointments">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h3>Recent Activity</h3>
+                        </div>
+                        <div class="dashboard-card-body">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon blue">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>New Patient Registered</h4>
+                                        <p>John Doe registered as a new patient</p>
+                                        <span>2 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon green">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Appointment Confirmed</h4>
+                                        <p>Sarah Johnson confirmed appointment with Dr. Chen</p>
+                                        <span>15 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon orange">
+                                        <i class="fas fa-prescription"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>New Prescription</h4>
+                                        <p>Dr. Martinez issued prescription for Michael Brown</p>
+                                        <span>1 hour ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon blue">
+                                        <i class="fas fa-file-medical"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h4>Medical Record Updated</h4>
+                                        <p>Emily Wilson's medical record was updated</p>
+                                        <span>2 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointments Section -->
+            <section class="admin-section" id="appointments">
+                <div class="admin-header">
+                    <h1>Appointment Management</h1>
+                </div>
+
+                <div class="appointments-management">
+                    <div class="appointment-filters">
+                        <div class="filter-group">
+                            <label>Status:</label>
+                            <select id="appointmentStatusFilter">
+                                <option value="">All Status</option>
+                                <option value="confirmed">Confirmed</option>
+                                <option value="pending">Pending</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Date:</label>
+                            <input type="date" id="appointmentDateFilter">
+                        </div>
+                        <button class="btn btn-primary btn-sm" onclick="loadAppointments()">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                        <button class="btn btn-outline btn-sm" onclick="resetFilters()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Patient Name</th>
+                                    <th>Doctor</th>
+                                    <th>Department</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointmentsTable">
+                                <!-- Dynamic content -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination" id="appointmentsPagination">
+                        <!-- Dynamic pagination -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patients Section -->
+            <section class="admin-section" id="patients">
+                <div class="admin-header">
+                    <h1>Patient Management</h1>
+                    <button class="btn btn-primary" onclick="openAddPatientModal()">
+                        <i class="fas fa-plus"></i> Add Patient
+                    </button>
+                </div>
+
+                <div class="patients-table">
+                    <div class="table-header">
+                        <h3>All Patients</h3>
+                        <div class="table-filters">
+                            <input type="text" id="patientSearch" placeholder="Search patients...">
+                            <select id="patientStatusFilter">
+                                <option value="">All Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Date of Birth</th>
+                                    <th>Blood Type</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="patientsTable">
+                                <!-- Dynamic content -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Doctors Section -->
+            <section class="admin-section" id="doctors">
+                <div class="admin-header">
+                    <h1>Doctor Management</h1>
+                    <button class="btn btn-primary" onclick="openAddDoctorModal()">
+                        <i class="fas fa-plus"></i> Add Doctor
+                    </button>
+                </div>
+
+                <div class="doctor-grid" id="doctorsGrid">
+                    <!-- Dynamic content -->
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section class="admin-section" id="reports">
+                <div class="admin-header">
+                    <h1>Reports & Analytics</h1>
+                </div>
+
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3><i class="fas fa-calendar-check"></i> Appointment Statistics</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        </div>
+                        <div class="report-stats">
+                            <div class="report-stat">
+                                <span class="label">Total Appointments</span>
+                                <span class="value">156</span>
+                            </div>
+                            <div class="report-stat">
+                                <span class="label">This Month</span>
+                                <span class="value">42</span>
+                            </div>
+                            <div class="report-stat">
+                                <span class="label">Completion Rate</span>
+                                <span class="value">94%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="report-card">
+                        <h3><i class="fas fa-users"></i> Patient Statistics</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-pie" style="font-size: 3rem; color: var(--secondary-color);"></i>
+                        </div>
+                        <div class="report-stats">
+                            <div class="report-stat">
+                                <span class="label">Total Patients</span>
+                                <span class="value">248</span>
+                            </div>
+                            <div class="report-stat">
+                                <span class="label">New This Month</span>
+                                <span class="value">18</span>
+                            </div>
+                            <div class="report-stat">
+                                <span class="label">Active Rate</span>
+                                <span class="value">89%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="report-card">
+                        <h3><i class="fas fa-user-md"></i> Department Overview</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-bar" style="font-size: 3rem; color: var(--accent-dark);"></i>
+                        </div>
+                        <div class="report-stats">
+                            <div class="report-stat">
+                                <span class="label">Departments</span>
+                                <span class="value">10</span>
+                            </div>
+                            <div class="report-stat">
+                                <span class="label">Active Doctors</span>
+                                <span class="value">8</span>
+                            </div>
+                            <div class="report-stat">
+                                <span class="label">Available Today</span>
+                                <span class="value">6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="report-card">
+                        <h3><i class="fas fa-dollar-sign"></i> Revenue Overview</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-money-bill-wave" style="font-size: 3rem; color: var(--primary-color);"></i>
+                        </div>
+                        <div class="report-stats">
+                            <div class="report-stat">
+                                <span class="label">Total Revenue</span>
+                                <span class="value">$125,000</span>
+                            </div>
+                            <div class="report-stat">
+                                <span class="label">This Month</span>
+                                <span class="value">$32,500</span>
+                            </div>
+                            <div class="report-stat">
+                                <span class="label">Growth</span>
+                                <span class="value">+12%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section class="admin-section" id="settings">
+                <div class="admin-header">
+                    <h1>System Settings</h1>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-hospital"></i> Hospital Information</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Hospital Name</h4>
+                                <p>MediCare Hospital</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Edit</button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Address</h4>
+                                <p>123 Medical Center Drive, Healthcare City</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Edit</button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Contact Number</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-bell"></i> Notification Settings</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Email Notifications</h4>
+                                <p>Receive email alerts for new appointments</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>SMS Notifications</h4>
+                                <p>Receive SMS alerts for emergencies</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Daily Reports</h4>
+                                <p>Receive daily summary reports</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-clock"></i> Working Hours</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Monday - Friday</h4>
+                                <p>8:00 AM - 8:00 PM</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Edit</button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Saturday</h4>
+                                <p>9:00 AM - 5:00 PM</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Edit</button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Sunday</h4>
+                                <p>10:00 AM - 2:00 PM</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-shield-alt"></i> Security Settings</h3>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Two-Factor Authentication</h4>
+                                <p>Add an extra layer of security</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h4>Session Timeout</h4>
+                                <p>Auto logout after 30 minutes of inactivity</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <button class="btn btn-sm btn-danger">Change Password</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="admin-menu-toggle" id="adminMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Add Patient Modal -->
+    <div class="modal" id="addPatientModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Patient</h3>
+                <button class="modal-close" onclick="closeModal('addPatientModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addPatientForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Blood Type</label>
+                        <select class="form-control">
+                            <option value="">Select</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('addPatientModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="savePatient()">Save Patient</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
+
